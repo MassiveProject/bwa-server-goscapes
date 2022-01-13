@@ -21,7 +21,7 @@ module.exports = {
       if (req.session.user == null || req.session.user == undefined) {
         res.render('index', {
           alert,
-          title: "Go Scapes | Login"
+          title: "Lyxsuite | Login"
         });
       } else {
         res.redirect('/admin/dashboard');
@@ -88,7 +88,7 @@ module.exports = {
         res.render('admin/category/view_category', {
             category,
             alert,
-            title: "Go Scapes | Category",
+            title: "Lyxsuite | Category",
             user: req.session.user
           });
         } catch (error){
@@ -153,7 +153,7 @@ module.exports = {
             const alertStatus = req.flash('alertStatus');
             const alert = { message: alertMessage, status: alertStatus };
             res.render('admin/bank/view_bank', {
-                title: "Go Scapes  | Bank",
+                title: "Lyxsuite  | Bank",
                 alert,
                 bank,
                 user: req.session.user
@@ -241,7 +241,7 @@ module.exports = {
       const alertStatus = req.flash('alertStatus');
       const alert = { message: alertMessage, status: alertStatus };
         res.render('admin/item/view_item', {
-          title: "Go Scapes  | Item",
+          title: "Lyxsuite  | Item",
           category,
           alert,
           item,
@@ -294,7 +294,7 @@ module.exports = {
         const alertStatus = req.flash('alertStatus');
         const alert = { message: alertMessage, status: alertStatus };
         res.render('admin/item/view_item', {
-          title: "Go Scapes | Show Image Item",
+          title: "Lyxsuite | Show Image Item",
           alert,
           item,
           action: 'show image',
@@ -317,7 +317,7 @@ module.exports = {
         const alertStatus = req.flash('alertStatus');
         const alert = { message: alertMessage, status: alertStatus };
         res.render('admin/item/view_item', {
-          title: "Go Scapes | Edit Item",
+          title: "Lyxsuite | Edit Item",
           alert,
           item,
           category,
@@ -408,7 +408,7 @@ module.exports = {
         const activity = await Activity.find({ itemId: itemId });
   
         res.render('admin/item/detail_item/view_detail_item', {
-          title: 'Go Scapes | Detail Item',
+          title: 'Lyxsuite | Detail Item',
           alert,
           itemId,
           feature,
@@ -587,7 +587,7 @@ module.exports = {
           .populate('bankId');
   
         res.render('admin/booking/view_booking', {
-          title: "Go Scapes | Booking",
+          title: "Lyxsuite | Booking",
           user: req.session.user,
           booking
         });
@@ -608,7 +608,7 @@ module.exports = {
           .populate('bankId');
   
         res.render('admin/booking/show_detail_booking', {
-          title: "Go Scapes | Detail Booking",
+          title: "Lyxsuite | Detail Booking",
           user: req.session.user,
           booking,
           alert
